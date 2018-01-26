@@ -1,0 +1,43 @@
+.page-nav{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.page-nav li{
+  display: inline-block;
+}
+.page-nav a{
+  font-family:"Nunito Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 20px;
+  color: rgba(#fff,0.8);
+  position: relative;
+  transition: .5s all;
+}
+.page-nav a:hover{
+  color:$color-main;
+  font-weight: 900;
+}
+.page-nav a:before{
+  content: '';
+  position: absolute;
+  top:50%;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  height: 1px;
+  background: $color-main;
+}
+.page-nav a:hover:before{
+  content: '';
+  position: absolute;
+  top:50%;
+  left: 0;
+  width: 100%;
+  opacity: 1;
+  height: 1px;
+  background: $color-main;
+}
+AIzaSyBZhDhefUkwU1QuSb6jpounPwyFZA3_0k8
