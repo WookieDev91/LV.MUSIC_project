@@ -1,8 +1,124 @@
+@import "_main-banner-svg.scss";
+$color-main: #00FBE0;
 *, *:after, *:before {
     box-sizing: border-box;
 }
-
-body {
-    margin:0;
-    font-family: $fontFamily;
+body{
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+}
+.container{
+    max-width: 1350px;
+    margin: 0 auto;
+}
+//hero seciton head
+.main-hero {
+    $color1 : rgba(black, 0.86);
+    $color2 : rgba(black, 0.9);
+    height:100vh;
+    background:
+            linear-gradient(
+                            -45deg,
+                            $color1 0%, $color1 25%,
+                            $color2 25%, $color2 50%,
+                            $color1 50%, $color1 75%,
+                            $color2 75%, $color2 100%
+            ),
+            url(../images/main-banner.jpg);
+    background-size: 6px 6px, cover;
+    background-repeat: repeat, no-repeat;
+    background-position: center bottom;
+}
+.page-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+.page-nav{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.page-nav li{
+    display: inline-block;
+}
+.page-nav a{
+    font-family:"Nunito Sans", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: rgba(#fff,0.8);
+    position: relative;
+    transition: .5s all;
+}
+.page-nav a:hover{
+    color:$color-main;
+    font-weight: 900;
+}
+.page-nav a:before{
+    content: '';
+    position: absolute;
+    top:50%;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    height: 1px;
+    background: $color-main;
+}
+.page-nav a:hover:before{
+    content: '';
+    position: absolute;
+    top:50%;
+    left: 0;
+    width: 100%;
+    opacity: 1;
+    height: 1px;
+    background: $color-main;
+}
+// hero main banner
+.main-hero{
+    display: flex;
+}
+.main-hero .container{
+    display: flex;
+    flex-direction: column;
+}
+.main-banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow:1;
+}
+.main-banner-title{
+    svg{
+        width: 1000px;
+    }
+}
+.main-banner-text{
+    font-size: 20px;
+    max-width: 840px;
+    color:rgba(#fff,.35);
+    text-align: center  ;
+}
+.main-banner-button{
+    margin-top: 70px;
+    font-family:"Nunito Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 25px 50px ;
+    border-radius: 40px;
+    border: 1px solid #fff;
+    background: rgba(#fff, 0.08);
+    transition:0.5s all
+}
+.main-banner-button:hover{
+    background: rgba($color-main, 0.5);
+    color:#222;
+    border-color: $color-main;
 }

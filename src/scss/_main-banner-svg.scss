@@ -1,0 +1,23 @@
+.st0{fill-opacity:0; fill:#00FCE1; stroke:#00FCE1;}
+.st1{fill-opacity:0; fill:#FFFFFF; stroke:#FFFFFF;}
+.st2{fill:none;stroke:#00FCE1; stroke-linecap:round; stroke-linejoin:round; stroke-miterlimit:10;}
+$offset : 400 140 200 200 330 350 200 320 270 220 160 210;
+@for $i from 1 through 12 {
+  .c#{$i} {
+    stroke-dashoffset: nth($offset, $i);
+    stroke-dasharray : nth($offset, $i);
+    $delay: (0.3 * $i) * 1s;
+    $delay2: (0.3 * $i + 0.5) * 1s;
+    animation: animMainBannerStroke 0.5s $delay 1 linear forwards, animMainBannerTitleFill 1s $delay2 1 linear forwards;
+  }
+}
+.st2 {stroke-dashoffset:7000; stroke-dasharray : 7000; animation: animHeart 3s 0s 1 linear forwards;}
+@keyframes animMainBannerStroke {
+  100% {stroke-dashoffset:0;}
+}
+@keyframes animMainBannerTitleFill {
+  100% {fill-opacity:1;}
+}
+@keyframes animHeart {
+  100% {stroke-dashoffset:0;}
+}
