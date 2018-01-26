@@ -1,0 +1,33 @@
+&gap: 10px;
+&columns: 12;
+&breakpoint: 768px;
+
+//grid >>> NIE RUSZAĆ
+.container {
+  padding-left: $gap;
+  padding-right: 10px;
+  .row {
+
+    &:after {
+      display: block;
+      clear: both;
+      content: '';
+      margin-left: -$gap;
+      margin-right: -$gap;
+    }
+
+    @for $i from 1 through $columns {
+      .col-#{$i}-#{$columns} {
+        box-sizing: border-box;
+        padding: 0 2*$gap;
+        margin-bottom: $gap;
+
+        @media (min-width: $breakpoint) {
+          width: (100/$columns*$i)*1%;
+          float: left;
+
+        }
+      }
+    }
+  }
+}
